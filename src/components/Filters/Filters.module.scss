@@ -1,0 +1,15 @@
+.container {
+  grid-column: 2 / 2;
+  grid-row: 1 / 1;
+  display: inline-flex;
+  justify-content: center;
+}
+
+.container > Button:first-of-type {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.container > Button:last-of-type {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
