@@ -1,9 +1,7 @@
-import { createSlice } from "@reduxjs/toolkit";
-import type { PayloadAction } from "@reduxjs/toolkit";
-import type { RootState } from "../store";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { OneOfTicket } from "../../types";
 
-interface TicketState {
+export interface TicketState {
   tickets: OneOfTicket[];
   sortTickets: OneOfTicket[];
 }
@@ -53,6 +51,5 @@ export const ticketsSlice = createSlice({
 export const { saveTickets, sortingTickets, sortTicketsByPrice, sortTicketsByTime } =
   ticketsSlice.actions;
 
-// export const selectCount = (state: RootState) => state.counter.value;
 
 export default ticketsSlice.reducer;

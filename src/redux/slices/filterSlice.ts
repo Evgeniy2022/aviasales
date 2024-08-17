@@ -1,7 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { v4 as uuidv4 } from "uuid";
 import type { PayloadAction } from "@reduxjs/toolkit";
-import type { RootState } from "../store";
 
 export interface CheckboxStore {
   name: string;
@@ -86,6 +85,5 @@ export const checkboxesSlice = createSlice({
 export const { setStateCheckboxes, setCheckboxesByAll, setCheckboxesByOne } =
   checkboxesSlice.actions;
 
-// export const selectCount = (state: RootState) => state.counter.value;
 
 export default checkboxesSlice.reducer;

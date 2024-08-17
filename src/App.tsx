@@ -1,4 +1,5 @@
-import { useEffect, FC, useState } from "react";
+import { useEffect, FC, useState, Dispatch } from "react";
+import { UnknownAction } from "@reduxjs/toolkit";
 import { useDispatch } from "react-redux";
 import { v4 as uuidv4 } from "uuid";
 
@@ -16,9 +17,9 @@ export const App: FC = () => {
   const [loader, setLoader] = useState(true);
   const [count, setCount] = useState(5);
 
-  const dispatch = useDispatch();
+  const dispatch: Dispatch<UnknownAction> = useDispatch();
 
-  async function getTicketsRequest(data) {
+  async function getTicketsRequest(data: { searchId: string }) {
     try {
       const response = await getTickets(data.searchId);
       if (response.stop === true) {
@@ -27,7 +28,7 @@ export const App: FC = () => {
       } else {
         dispatch(
           saveTickets(
-            response.tickets.map((ticket) => ({ ...ticket, id: uuidv4() }))
+            response.tickets.map((ticket: []) => ({ ...ticket, id: uuidv4() }))
           )
         );
         return getTicketsRequest(data);

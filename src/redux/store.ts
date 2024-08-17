@@ -1,12 +1,11 @@
-import { configureStore } from "@reduxjs/toolkit";
+import { configureStore, Store } from "@reduxjs/toolkit";
 import ticketsSlice from "./slices/tickets";
 import checkboxesSlice from "./slices/filterSlice";
 
-
-export const store = configureStore({
+export const store: Store = configureStore({
   reducer: {
-	ticketsSlice,
-	checkboxesSlice,
+    ticketsSlice,
+    checkboxesSlice,
   },
 });
 
