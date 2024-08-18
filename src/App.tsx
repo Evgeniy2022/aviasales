@@ -8,6 +8,7 @@ import { Transfers } from "./components/Transfers/Transfers";
 import { Filters } from "./components/Filters/Filters";
 import { Button } from "./components/Button/Button";
 import { Loader } from "./components/Loader/Loader";
+import Logo from '../public/Logo.png'
 
 import { getSearchId, getTickets } from "./api";
 import { saveTickets } from "./redux/slices/tickets";
@@ -48,7 +49,7 @@ export const App: FC = () => {
   return (
     <>
       <header>
-        <img src="../public/Logo.png" alt="logo" />
+        <img src={Logo} alt="logo" />
       </header>
 
       {loader && <Loader />}

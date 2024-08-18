@@ -31,7 +31,6 @@ export const TicketList: FC<TicketListProps> = ({ count }) => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [checkboxData]);
 
-  //   console.log(ticketsData);
   return (
     <ul className={styles.ticketlist}>
       {ticketsData.slice(0, count).map((ticket: OneOfTicket) => (
