@@ -15,7 +15,7 @@ export const Filters:FC = () => {
 	const dispatch = useDispatch()
 
 	function handlePriceClick(n:number) {
-		setTabs(()=>tabs.map((item, index)=>{
+		setTabs(()=>tabs.map((_item, index)=>{
 			return index === n
 		}))
 	}

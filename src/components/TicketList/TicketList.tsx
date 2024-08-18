@@ -28,6 +28,7 @@ export const TicketList: FC<TicketListProps> = ({ count }) => {
       (checkbox: CheckboxStore) => checkbox.state
     );
     dispatch(sortingTickets(activeCheckboxes));
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [checkboxData]);
 
   //   console.log(ticketsData);

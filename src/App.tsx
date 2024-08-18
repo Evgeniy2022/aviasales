@@ -42,6 +42,7 @@ export const App: FC = () => {
     getSearchId().then((data) => {
       getTicketsRequest(data);
     });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch]);
 
   return (
