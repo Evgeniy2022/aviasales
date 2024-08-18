@@ -6,7 +6,7 @@ export function getSearchId() {
     });
 }
 
-export function getTickets(id) {
+export function getTickets(id: string) {
   return fetch(
     `https://aviasales-test-api.kata.academy/tickets?searchId=${id}&size=5`
   )

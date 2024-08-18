@@ -1,11 +1,15 @@
 import { FC } from "react";
 import { useSelector } from "react-redux";
+import { RootState } from "../../redux/store";
 
 import styles from "./Transfers.module.scss";
 import { Checkbox } from "../Checkbox/Checkbox";
+import { CheckboxStore } from "../../redux/slices/filterSlice";
 
 export const Transfers: FC = () => {
-	const checkboxes = useSelector((state) => state.checkboxesSlice.checkboxes);
+	const checkboxes = useSelector(
+    (state: RootState) => state.checkboxesSlice.checkboxes
+  );
 
 
   return (
@@ -13,7 +17,7 @@ export const Transfers: FC = () => {
       <div className={styles.body}>
         <h1 className={styles.title}>Количество пересадок</h1>
         <div>
-			{checkboxes.map((checkbox, index)=>{
+			{checkboxes.map((checkbox:CheckboxStore, index: number)=>{
 				return <Checkbox key={index} data={checkbox} checkboxes={checkboxes} />;
 			})}
         </div>

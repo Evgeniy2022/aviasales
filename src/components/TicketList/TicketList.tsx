@@ -5,6 +5,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { Ticket } from "../Ticket/Ticket";
 import { RootState } from "../../redux/store";
 import { sortingTickets } from "../../redux/slices/tickets";
+import { CheckboxStore } from "../../redux/slices/filterSlice";
+import { OneOfTicket } from "../../types";
 
 import styles from "./TicketList.module.scss";
 interface TicketListProps {
@@ -22,14 +24,16 @@ export const TicketList: FC<TicketListProps> = ({ count }) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const activeCheckboxes = checkboxData.filter((checkbox) => checkbox.state);
+    const activeCheckboxes = checkboxData.filter(
+      (checkbox: CheckboxStore) => checkbox.state
+    );
     dispatch(sortingTickets(activeCheckboxes));
   }, [checkboxData]);
 
   //   console.log(ticketsData);
   return (
     <ul className={styles.ticketlist}>
-      {ticketsData.slice(0, count).map((ticket) => (
+      {ticketsData.slice(0, count).map((ticket: OneOfTicket) => (
         <Ticket ticket={ticket} key={uuidv4()} />
       ))}
     </ul>

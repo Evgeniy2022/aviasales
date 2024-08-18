@@ -8,13 +8,13 @@ import { useDispatch } from 'react-redux';
 
 
 export const Filters:FC = () => {
-	const [tabs, setTabs] = useState([
+	const [tabs, setTabs] = useState<boolean[]>([
 		false,false,false
 	]);
 	
 	const dispatch = useDispatch()
 
-	function handlePriceClick(n) {
+	function handlePriceClick(n:number) {
 		setTabs(()=>tabs.map((item, index)=>{
 			return index === n
 		}))
@@ -25,7 +25,7 @@ export const Filters:FC = () => {
       <Button
         onClick={() => {
           dispatch(sortTicketsByPrice());
-          handlePriceClick(n);
+          handlePriceClick(0);
         }}
       >
         Самый дешевый
@@ -33,12 +33,12 @@ export const Filters:FC = () => {
       <Button
         onClick={() => {
           dispatch(sortTicketsByTime());
-          handlePriceClick(n);
+          handlePriceClick(1);
         }}
       >
         Самый быстрый
       </Button>
-      <Button>Оптимальный</Button>
+      <Button onClick={()=>{}}>Оптимальный</Button>
     </div>
   );
 };
