@@ -1,2 +1,2 @@
 # React + TypeScript + Vite
-https://aviasales-ak4d.vercel.app/
+https://aviasales-kwnt.vercel.app/
