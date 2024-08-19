@@ -57,7 +57,7 @@ export const App: FC = () => {
         <Transfers />
         <Filters />
         <TicketList count={count} />
-        <Button onClick={() => setCount((prev) => (prev += 5))}>
+        <Button isActive onClick={() => setCount((prev) => (prev += 5))}>
           Показать еще 5 билетов!
         </Button>
       </main>
